@@ -16,10 +16,13 @@ crsr = conn.cursor()
 
 # Running SQL Quaries using '.execute()'
 crsr.execute("SELECT * FROM Customers")
+
 # Using The 'fetchall()' - It Is DANGEROUS Because You Can Crash The Server Due To A High Amount Of Data
 all_rows = crsr.fetchall()
 print(all_rows)
 print(type(all_rows))
+
+# print(crsr.description)
 
 counter = 0
 for item in all_rows:
@@ -29,12 +32,12 @@ for item in all_rows:
 # Best Practices Is To Use A 'while loop' And 'fetchone()' Until Your Entry Is None.
 rows = crsr.execute("SELECT * FROM CUSTOMERS")
 
-while True:
 
-        record = rows.fetchone()
-        if record is None:
+while True:
+        records = rows.fetchone()
+        if records is None:
             break
-        print(record.ContactName)
+        print(records.ContactName)
 
 rows = crsr.execute("SELECT * FROM PRODUCTS")
 
@@ -45,8 +48,9 @@ while True:
     record = rows.fetchone()
     if record is None:
         break
-    print(record.UnitPrice * 200)
+
     new_values.append(record.UnitPrice * 200)
+    print(record.UnitPrice * 200)
 
 # row = crsr.fetchone() # Chooses An Entry In The Cursor
 # print(row)
