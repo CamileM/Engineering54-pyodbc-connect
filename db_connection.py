@@ -32,7 +32,6 @@ for item in all_rows:
 # Best Practices Is To Use A 'while loop' And 'fetchone()' Until Your Entry Is None.
 rows = crsr.execute("SELECT * FROM CUSTOMERS")
 
-
 while True:
         records = rows.fetchone()
         if records is None:

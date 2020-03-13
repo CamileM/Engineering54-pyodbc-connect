@@ -1,7 +1,6 @@
-# Connect Python to SQL using Pyodbc
+# Connect Python to SQL using 'pyodbc'
 
 ## Agenda
-
 - Connect To The 'Northwind Database' 
 - Abstract Our Connection
 - Make Our Data Persistent
